@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Weather Dashboard Pro</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div id="loader">
+    <div class="spinner"></div>
+</div>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <header>
+
+            <h1>🌦 Pocket Weather Dashboard</h1>
+
+            <button id="themeBtn">
+                🌙
+            </button>
+
+        </header>
+
+        <!-- Search -->
+
+        <div class="search-section">
+
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Search city...">
+
+            <button id="searchBtn">
+                Search
+            </button>
+
+            <button id="locationBtn">
+                📍 My Location
+            </button>
+
+        </div>
+
+        <!-- Current Weather -->
+
+        <section class="weather-card">
+
+            <img id="weatherIcon" src="" alt="">
+
+            <h2 id="cityName">City</h2>
+
+            <h1 id="temperature">--°C</h1>
+
+            <p id="description">Weather Description</p>
+
+        </section>
+
+        <!-- Weather Details -->
+
+        <section class="details">
+
+            <div class="detail-card">
+                <h3>Humidity</h3>
+                <p id="humidity">--%</p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Wind</h3>
+                <p id="wind">-- km/h</p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Pressure</h3>
+                <p id="pressure">-- hPa</p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Visibility</h3>
+                <p id="visibility">-- km</p>
+            </div>
+        </section>
+
+        <!-- Sunrise Sunset -->
+
+        <section class="sun-section">
+
+            <div class="sun-card">
+                🌅 Sunrise
+                <p id="sunrise">--</p>
+            </div>
+
+            <div class="sun-card">
+                🌇 Sunset
+                <p id="sunset">--</p>
+            </div>
+
+        </section>
+
+        <!-- Hourly Forecast -->
+
+        <section>
+
+            <h2>Hourly Forecast</h2>
+
+            <div id="hourlyForecast"
+                class="forecast-container">
+
+            </div>
+
+        </section>
+
+        <!-- Chart -->
+
+        <section>
+
+            <h2>Temperature Trend</h2>
+
+            <canvas id="weatherChart"></canvas>
+
+        </section>
+
+        <!-- 5 Day Forecast -->
+
+        <section>
+
+            <h2>5-Day Forecast</h2>
+
+            <div id="forecast5days"
+                class="forecast-container">
+
+            </div>
+
+        </section>
+
+        <!-- Favorite Cities -->
+
+        <section>
+
+            <h2>⭐ Favorite Cities</h2>
+
+            <div id="favorites"></div>
+
+<button id="saveCityBtn">
+    ⭐ Save Current City
+</button>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

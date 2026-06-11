@@ -1,0 +1,510 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background: linear-gradient(
+        -45deg,
+        #0f172a,
+        #1e293b,
+        #2563eb,
+        #0ea5e9
+    );
+
+    background-size: 400% 400%;
+
+    animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position: 0% 50%;
+    }
+
+    50%{
+        background-position: 100% 50%;
+    }
+
+    100%{
+        background-position: 0% 50%;
+    }
+
+}
+
+.container{
+
+    width:100%;
+    max-width:1300px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    border-radius:30px;
+
+    padding:35px;
+
+    color:white;
+
+    box-shadow:
+    0 8px 32px rgba(0,0,0,.3),
+    inset 0 1px 1px rgba(255,255,255,.2);
+
+}
+
+/* Header */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+header h1{
+    font-size:2rem;
+}
+
+#themeBtn{
+    padding:10px 15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* Search */
+
+.search-section{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.search-section input{
+    flex:1;
+    min-width:250px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+}
+
+.search-section button{
+    padding:14px 18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+/* Weather Card */
+
+.weather-card{
+    text-align:center;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.08);
+
+    margin-bottom:25px;
+}
+
+.weather-card img{
+    width:100px;
+}
+
+.weather-card h1{
+
+    font-size:6rem;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    text-shadow:
+    0 0 20px rgba(255,255,255,.3);
+
+}
+
+.weather-card h2{
+    margin-bottom:10px;
+}
+
+/* Details Grid */
+
+.details{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+
+    gap:15px;
+
+    margin-bottom:25px;
+}
+
+.detail-card{
+    background:rgba(255,255,255,0.08);
+
+    padding:20px;
+
+    border-radius:15px;
+
+    text-align:center;
+}
+
+.detail-card p{
+    margin-top:10px;
+    font-size:1.3rem;
+}
+
+/* Sun Section */
+
+.sun-section{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:15px;
+
+    margin-bottom:25px;
+}
+
+.sun-card{
+    background:rgba(255,255,255,0.08);
+
+    padding:20px;
+
+    border-radius:15px;
+
+    text-align:center;
+}
+
+/* Forecast */
+
+.forecast-container{
+    display:flex;
+    gap:15px;
+    overflow-x:auto;
+    margin-top:15px;
+    margin-bottom:25px;
+}
+
+.forecast-item{
+    min-width:120px;
+
+    background:rgba(255,255,255,0.08);
+
+    padding:15px;
+
+    border-radius:15px;
+
+    text-align:center;
+}
+
+/* Chart */
+
+canvas{
+    margin-top:20px;
+    margin-bottom:30px;
+}
+
+/* Favorites */
+
+#favorites{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.favorite-city{
+
+    border:none;
+
+    padding:12px 18px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.15);
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.favorite-city:hover{
+
+    transform:scale(1.08);
+
+    background:
+    rgba(255,255,255,.25);
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .weather-card h1{
+        font-size:3rem;
+    }
+
+}
+
+.light-mode{
+    background:
+    linear-gradient(
+        135deg,
+        #87ceeb,
+        #dbeafe,
+        #ffffff
+    );
+}
+
+.light-mode .container{
+    color:#111827;
+
+    background:
+    rgba(255,255,255,0.7);
+}
+
+.light-mode .weather-card,
+.light-mode .detail-card,
+.light-mode .sun-card,
+.light-mode .forecast-item{
+
+    background:
+    rgba(255,255,255,0.6);
+
+    color:#111827;
+}
+
+.clear-weather{
+    background:
+    linear-gradient(
+        135deg,
+        #38bdf8,
+        #60a5fa,
+        #93c5fd
+    );
+}
+
+.cloud-weather{
+    background:
+    linear-gradient(
+        135deg,
+        #64748b,
+        #94a3b8,
+        #cbd5e1
+    );
+}
+
+.rain-weather{
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #334155,
+        #475569
+    );
+}
+
+.night-weather{
+    background:
+    linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #1e293b
+    );
+}
+
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,0.5);
+
+    z-index:9999;
+}
+
+.spinner{
+
+    width:60px;
+    height:60px;
+
+    border:6px solid rgba(255,255,255,0.3);
+
+    border-top:6px solid white;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+
+    0%{
+        transform:rotate(0deg);
+    }
+
+    100%{
+        transform:rotate(360deg);
+    }
+
+}
+
+.weather-card,
+.detail-card,
+.sun-card,
+.forecast-item{
+
+    transition:0.3s ease;
+    cursor:pointer;
+
+}
+
+.weather-card:hover,
+.detail-card:hover,
+.sun-card:hover,
+.forecast-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,0.3);
+
+}
+
+.search-section button{
+
+    transition:0.3s;
+
+}
+
+.search-section button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px rgba(59,130,246,.7);
+
+}
+
+#weatherIcon{
+
+    animation:
+    floatIcon 3s ease-in-out infinite;
+
+}
+
+@keyframes floatIcon{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+    rgba(255,255,255,.3);
+
+    border-radius:20px;
+
+}
+
+.weather-card{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+.weather-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-50%;
+    left:-50%;
+
+    width:200%;
+    height:200%;
+
+    background:
+    linear-gradient(
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    transform:rotate(45deg);
+
+    animation:
+    shine 6s linear infinite;
+
+}
+
+@keyframes shine{
+
+    0%{
+        transform:
+        translateX(-100%)
+        rotate(45deg);
+    }
+
+    100%{
+        transform:
+        translateX(100%)
+        rotate(45deg);
+    }
+
+}
